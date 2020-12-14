@@ -228,7 +228,7 @@
         "description": "Create a new user."
       }
     },
-    "/dbclist": {
+    "/dbc/{DBCFileName}": {
       "get": {
         "summary": "Get DIAP DBC List per DBC Text Search",
         "operationId": "get-dbc_list",
@@ -280,7 +280,17 @@
           "diap dbc end point"
         ]
       },
-      "parameters": []
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "DBCFileName",
+          "in": "path",
+          "required": true,
+          "description": "free text - wild card input"
+        }
+      ]
     }
   },
   "components": {
