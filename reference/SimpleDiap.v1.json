@@ -228,19 +228,13 @@
         "description": "Create a new user."
       }
     },
-    "/dbc": {
+    "/dbclist": {
       "get": {
-        "summary": "",
-        "operationId": "get-dbc",
+        "summary": "Get DIAP DBC List per DBC Text Search",
+        "operationId": "get-dbc_list",
         "responses": {
           "200": {
-            "description": "OK"
-          },
-          "201": {
-            "description": "Created"
-          },
-          "400": {
-            "description": "Bad Request",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -253,20 +247,21 @@
                       }
                     },
                     "ReturnCode": {
-                      "type": "string"
+                      "type": "integer"
                     },
                     "ReturnDescription": {
                       "type": "string"
                     }
                   }
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {}
-                  }
                 }
               }
             }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         },
         "description": "Get a list of DBC files supplying a free text wild card input.  A list of dbc files in the configured linux durectory is returned.",
@@ -284,7 +279,8 @@
         "tags": [
           "diap dbc end point"
         ]
-      }
+      },
+      "parameters": []
     }
   },
   "components": {
